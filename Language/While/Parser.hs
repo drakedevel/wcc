@@ -54,6 +54,7 @@ reserved = P.reserved lexer
 reservedOp = P.reservedOp lexer
 semi = P.semi lexer
 semiSep1 = P.semiSep1 lexer
+whiteSpace = P.whiteSpace lexer
 
 initializeExpr :: Parser AST
 initializeExpr = do
@@ -174,4 +175,6 @@ functionDecl = do
   return $ Function name (length params) body
 
 whileModule :: Parser [Function]
-whileModule = many1 functionDecl
+whileModule = do
+  whiteSpace
+  many1 functionDecl
