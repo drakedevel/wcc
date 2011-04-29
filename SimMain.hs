@@ -6,7 +6,7 @@ import Language.While.Parser
 import Language.Turing.Serialize
 import Language.Turing.Simulate
 import Language.Turing.Machine
-import System
+import System.Environment
 import System.IO
 import Text.Parsec
 import Text.Printf
