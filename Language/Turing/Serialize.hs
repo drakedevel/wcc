@@ -41,7 +41,8 @@ machineToSexpr m =
       rule r = list $ [show $ fromEnum $ condState r,
                        show $ fromEnum $ nextState r,
                        pat $ condPat r,
-                       pat $ actPat r]
+                       pat $ actPat r,
+                       show $ delta r]
   in list [show $ fromEnum $ initState m,
            show $ fromEnum $ haltState m,
            list $ map rule $ rules m]
